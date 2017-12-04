@@ -24,11 +24,14 @@ module.exports = {
     switch (path) {
       case ('/'):
         renderHTML('./index.html', response);
-        break
-      case ('/home2'):
-          renderHTML('./index2.html', response);
-
+        break;
+      case ('/login'):
+          renderHTML('./login.html', response);
+          break;
+      default:
+      response.writeHead(404);
+      response.write('page not found');
+      response.end();
     }
   }
-
 }
